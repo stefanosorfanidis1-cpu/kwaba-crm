@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KWABA Venue CRM</title>
+
+<style>
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#0f172a;
+color:white;
+margin:0;
+}
+
+.login{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:#1e293b;
+padding:40px;
+border-radius:10px;
+width:320px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:8px;
+margin-bottom:16px;
+border-radius:6px;
+border:none;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#c9a84c;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.dashboard{
+display:none;
+padding:30px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login" id="loginScreen">
+
+<div class="box">
+<h2>KWABA CRM</h2>
+
+<label>Email</label>
+<input id="email">
+
+<label>Password</label>
+<input id="password" type="password">
+
+<button onclick="login()">Login</button>
+
+<p style="font-size:12px;margin-top:10px;">
+Admin: admin@kwaba.gr / admin123
+</p>
+
+</div>
+</div>
+
+<div class="dashboard" id="app">
+
+<h1>KWABA Dashboard</h1>
+
+<div class="card">
+<h3>Πελάτες</h3>
+<p id="clients"></p>
+</div>
+
+<div class="card">
+<h3>Εκδηλώσεις</h3>
+<p id="events"></p>
+</div>
+
+<button onclick="addClient()">+ Νέος Πελάτης</button>
+
+</div>
+
+<script>
+
+let clients=[
+"Μαρία & Νίκος",
+"Ελένη & Κώστας"
+];
+
+let events=[
+"14 Σεπ 2025",
+"22 Νοε 2025"
+];
+
+function login(){
+
+let email=document.getElementById("email").value;
+let pass=document.getElementById("password").value;
+
+if(email==="admin@kwaba.gr" && pass==="admin123"){
+
+document.getElementById("loginScreen").style.display="none";
+document.getElementById("app").style.display="block";
+
+render();
+
+}else{
+
+alert("Λάθος στοιχεία");
+
+}
+
+}
+
+function render(){
+
+document.getElementById("clients").innerHTML=clients.join("<br>");
+document.getElementById("events").innerHTML=events.join("<br>");
+
+}
+
+function addClient(){
+
+let name=prompt("Όνομα ζευγαριού");
+
+if(name){
+clients.push(name);
+render();
+}
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KWABA Venue CRM</title>
+
+<style>
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#0f172a;
+color:white;
+margin:0;
+}
+
+.login{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:#1e293b;
+padding:40px;
+border-radius:10px;
+width:320px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:8px;
+margin-bottom:16px;
+border-radius:6px;
+border:none;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#c9a84c;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.dashboard{
+display:none;
+padding:30px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login" id="loginScreen">
+
+<div class="box">
+<h2>KWABA CRM</h2>
+
+<label>Email</label>
+<input id="email">
+
+<label>Password</label>
+<input id="password" type="password">
+
+<button onclick="login()">Login</button>
+
+<p style="font-size:12px;margin-top:10px;">
+Admin: admin@kwaba.gr / admin123
+</p>
+
+</div>
+</div>
+
+<div class="dashboard" id="app">
+
+<h1>KWABA Dashboard</h1>
+
+<div class="card">
+<h3>Πελάτες</h3>
+<p id="clients"></p>
+</div>
+
+<div class="card">
+<h3>Εκδηλώσεις</h3>
+<p id="events"></p>
+</div>
+
+<button onclick="addClient()">+ Νέος Πελάτης</button>
+
+</div>
+
+<script>
+
+let clients=[
+"Μαρία & Νίκος",
+"Ελένη & Κώστας"
+];
+
+let events=[
+"14 Σεπ 2025",
+"22 Νοε 2025"
+];
+
+function login(){
+
+let email=document.getElementById("email").value;
+let pass=document.getElementById("password").value;
+
+if(email==="admin@kwaba.gr" && pass==="admin123"){
+
+document.getElementById("loginScreen").style.display="none";
+document.getElementById("app").style.display="block";
+
+render();
+
+}else{
+
+alert("Λάθος στοιχεία");
+
+}
+
+}
+
+function render(){
+
+document.getElementById("clients").innerHTML=clients.join("<br>");
+document.getElementById("events").innerHTML=events.join("<br>");
+
+}
+
+function addClient(){
+
+let name=prompt("Όνομα ζευγαριού");
+
+if(name){
+clients.push(name);
+render();
+}
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KWABA Venue CRM</title>
+
+<style>
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#0f172a;
+color:white;
+margin:0;
+}
+
+.login{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:#1e293b;
+padding:40px;
+border-radius:10px;
+width:320px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:8px;
+margin-bottom:16px;
+border-radius:6px;
+border:none;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#c9a84c;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.dashboard{
+display:none;
+padding:30px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login" id="loginScreen">
+
+<div class="box">
+<h2>KWABA CRM</h2>
+
+<label>Email</label>
+<input id="email">
+
+<label>Password</label>
+<input id="password" type="password">
+
+<button onclick="login()">Login</button>
+
+<p style="font-size:12px;margin-top:10px;">
+Admin: admin@kwaba.gr / admin123
+</p>
+
+</div>
+</div>
+
+<div class="dashboard" id="app">
+
+<h1>KWABA Dashboard</h1>
+
+<div class="card">
+<h3>Πελάτες</h3>
+<p id="clients"></p>
+</div>
+
+<div class="card">
+<h3>Εκδηλώσεις</h3>
+<p id="events"></p>
+</div>
+
+<button onclick="addClient()">+ Νέος Πελάτης</button>
+
+</div>
+
+<script>
+
+let clients=[
+"Μαρία & Νίκος",
+"Ελένη & Κώστας"
+];
+
+let events=[
+"14 Σεπ 2025",
+"22 Νοε 2025"
+];
+
+function login(){
+
+let email=document.getElementById("email").value;
+let pass=document.getElementById("password").value;
+
+if(email==="admin@kwaba.gr" && pass==="admin123"){
+
+document.getElementById("loginScreen").style.display="none";
+document.getElementById("app").style.display="block";
+
+render();
+
+}else{
+
+alert("Λάθος στοιχεία");
+
+}
+
+}
+
+function render(){
+
+document.getElementById("clients").innerHTML=clients.join("<br>");
+document.getElementById("events").innerHTML=events.join("<br>");
+
+}
+
+function addClient(){
+
+let name=prompt("Όνομα ζευγαριού");
+
+if(name){
+clients.push(name);
+render();
+}
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KWABA Venue CRM</title>
+
+<style>
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#0f172a;
+color:white;
+margin:0;
+}
+
+.login{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:#1e293b;
+padding:40px;
+border-radius:10px;
+width:320px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:8px;
+margin-bottom:16px;
+border-radius:6px;
+border:none;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#c9a84c;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.dashboard{
+display:none;
+padding:30px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login" id="loginScreen">
+
+<div class="box">
+<h2>KWABA CRM</h2>
+
+<label>Email</label>
+<input id="email">
+
+<label>Password</label>
+<input id="password" type="password">
+
+<button onclick="login()">Login</button>
+
+<p style="font-size:12px;margin-top:10px;">
+Admin: admin@kwaba.gr / admin123
+</p>
+
+</div>
+</div>
+
+<div class="dashboard" id="app">
+
+<h1>KWABA Dashboard</h1>
+
+<div class="card">
+<h3>Πελάτες</h3>
+<p id="clients"></p>
+</div>
+
+<div class="card">
+<h3>Εκδηλώσεις</h3>
+<p id="events"></p>
+</div>
+
+<button onclick="addClient()">+ Νέος Πελάτης</button>
+
+</div>
+
+<script>
+
+let clients=[
+"Μαρία & Νίκος",
+"Ελένη & Κώστας"
+];
+
+let events=[
+"14 Σεπ 2025",
+"22 Νοε 2025"
+];
+
+function login(){
+
+let email=document.getElementById("email").value;
+let pass=document.getElementById("password").value;
+
+if(email==="admin@kwaba.gr" && pass==="admin123"){
+
+document.getElementById("loginScreen").style.display="none";
+document.getElementById("app").style.display="block";
+
+render();
+
+}else{
+
+alert("Λάθος στοιχεία");
+
+}
+
+}
+
+function render(){
+
+document.getElementById("clients").innerHTML=clients.join("<br>");
+document.getElementById("events").innerHTML=events.join("<br>");
+
+}
+
+function addClient(){
+
+let name=prompt("Όνομα ζευγαριού");
+
+if(name){
+clients.push(name);
+render();
+}
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KWABA Venue CRM</title>
+
+<style>
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#0f172a;
+color:white;
+margin:0;
+}
+
+.login{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:#1e293b;
+padding:40px;
+border-radius:10px;
+width:320px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:8px;
+margin-bottom:16px;
+border-radius:6px;
+border:none;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#c9a84c;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.dashboard{
+display:none;
+padding:30px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login" id="loginScreen">
+
+<div class="box">
+<h2>KWABA CRM</h2>
+
+<label>Email</label>
+<input id="email">
+
+<label>Password</label>
+<input id="password" type="password">
+
+<button onclick="login()">Login</button>
+
+<p style="font-size:12px;margin-top:10px;">
+Admin: admin@kwaba.gr / admin123
+</p>
+
+</div>
+</div>
+
+<div class="dashboard" id="app">
+
+<h1>KWABA Dashboard</h1>
+
+<div class="card">
+<h3>Πελάτες</h3>
+<p id="clients"></p>
+</div>
+
+<div class="card">
+<h3>Εκδηλώσεις</h3>
+<p id="events"></p>
+</div>
+
+<button onclick="addClient()">+ Νέος Πελάτης</button>
+
+</div>
+
+<script>
+
+let clients=[
+"Μαρία & Νίκος",
+"Ελένη & Κώστας"
+];
+
+let events=[
+"14 Σεπ 2025",
+"22 Νοε 2025"
+];
+
+function login(){
+
+let email=document.getElementById("email").value;
+let pass=document.getElementById("password").value;
+
+if(email==="admin@kwaba.gr" && pass==="admin123"){
+
+document.getElementById("loginScreen").style.display="none";
+document.getElementById("app").style.display="block";
+
+render();
+
+}else{
+
+alert("Λάθος στοιχεία");
+
+}
+
+}
+
+function render(){
+
+document.getElementById("clients").innerHTML=clients.join("<br>");
+document.getElementById("events").innerHTML=events.join("<br>");
+
+}
+
+function addClient(){
+
+let name=prompt("Όνομα ζευγαριού");
+
+if(name){
+clients.push(name);
+render();
+}
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KWABA Venue CRM</title>
+
+<style>
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#0f172a;
+color:white;
+margin:0;
+}
+
+.login{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:#1e293b;
+padding:40px;
+border-radius:10px;
+width:320px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:8px;
+margin-bottom:16px;
+border-radius:6px;
+border:none;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#c9a84c;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.dashboard{
+display:none;
+padding:30px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login" id="loginScreen">
+
+<div class="box">
+<h2>KWABA CRM</h2>
+
+<label>Email</label>
+<input id="email">
+
+<label>Password</label>
+<input id="password" type="password">
+
+<button onclick="login()">Login</button>
+
+<p style="font-size:12px;margin-top:10px;">
+Admin: admin@kwaba.gr / admin123
+</p>
+
+</div>
+</div>
+
+<div class="dashboard" id="app">
+
+<h1>KWABA Dashboard</h1>
+
+<div class="card">
+<h3>Πελάτες</h3>
+<p id="clients"></p>
+</div>
+
+<div class="card">
+<h3>Εκδηλώσεις</h3>
+<p id="events"></p>
+</div>
+
+<button onclick="addClient()">+ Νέος Πελάτης</button>
+
+</div>
+
+<script>
+
+let clients=[
+"Μαρία & Νίκος",
+"Ελένη & Κώστας"
+];
+
+let events=[
+"14 Σεπ 2025",
+"22 Νοε 2025"
+];
+
+function login(){
+
+let email=document.getElementById("email").value;
+let pass=document.getElementById("password").value;
+
+if(email==="admin@kwaba.gr" && pass==="admin123"){
+
+document.getElementById("loginScreen").style.display="none";
+document.getElementById("app").style.display="block";
+
+render();
+
+}else{
+
+alert("Λάθος στοιχεία");
+
+}
+
+}
+
+function render(){
+
+document.getElementById("clients").innerHTML=clients.join("<br>");
+document.getElementById("events").innerHTML=events.join("<br>");
+
+}
+
+function addClient(){
+
+let name=prompt("Όνομα ζευγαριού");
+
+if(name){
+clients.push(name);
+render();
+}
+
+}
+
+</script>
+
+</body>
+</html>
